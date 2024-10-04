@@ -17,11 +17,6 @@ router.get("/", (req, res, next) => {
                     id: 2,
                     user: "user2",
                     message: "message2"
-                },
-                {
-                    id: 3,
-                    user: "user3",
-                    message: "message3"
                 }
             ]
         }
