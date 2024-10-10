@@ -5,18 +5,16 @@ var router = express.Router();
 router.get("/", (req, res, next) => {
     res.status(200).json({ 
         status: "success",
-        message:  "GET messages",
+        message:  "GETTING messages",
         data: {
             "messages": [
                 {
-                    id: 1,
-                    user: "user1",
-                    message: "message1"
+                    "user": "user",
+                    "message": "Hello"
                 },
                 {
-                    id: 2,
-                    user: "user2",
-                    message: "message2"
+                    "user": "Jane",
+                    "message": "Hi"
                 }
             ]
         }
@@ -25,10 +23,11 @@ router.get("/", (req, res, next) => {
 router.get("/:id", (req, res, next) => {
     res.status(200).json({ 
         status: "success",
-        message:  "GET message",
+        message:  "GETTING message 1",
         data: {
             "message": {
-                id: 1,
+                "user": "John",
+                "message": "Hello"
             }
         }
     });
@@ -37,10 +36,13 @@ router.get("/:id", (req, res, next) => {
 router.post("/", (req, res, next) => {
     res.status(200).json({ 
         status: "success",
-        message:  "POST message",
+        message:  "Message saved",
         data: {
             "message": {
-                id: 1,
+                "user": "Pikachu",
+                "text": "Hi, I'm a message",
+                "_id": "66faB85b6ad5aaee2d047fa28",
+                "__v":0
                 
             }
         }
@@ -51,10 +53,26 @@ router.post("/", (req, res, next) => {
 router.put("/:id", (req, res, next) => {
     res.status(200).json({
         status: "success",
-        message: "PUT message",
+        message: "message updated",
         data: {
             "message": {
-                id: 1,
+                "user": "Pikachu",
+                "text": "Hi, I'm a message",
+                "_id": "66faB85b6ad5aaee2d047fa28",
+                "__v":0
+            }
+        }
+    });
+}
+);
+
+router.put("/:id", (req, res, next) => {
+    res.status(200).json({
+        status: "success",
+        message: "message updated",
+        data: {
+            "message": {
+                "_id": "66faB85b6ad5aaee2d047fa28"            
             }
         }
     });
@@ -68,8 +86,15 @@ router.get("/:user", (req, res, next) => {
         data: {
             "messages": [
                 {
-                    id: 1,
+                    "user": "Pikachu",
+                "text": "Hi, I'm a message",
+                "_id": "66faB85b6ad5aaee2d047fa28",
 
+                },
+                {
+                    "user": "Pikachu",
+                    "text": "Hi, I'm another message",
+                    "_id": "qsd4f56sdf456ds4f56dsf4",
                 }
             ]
         }
